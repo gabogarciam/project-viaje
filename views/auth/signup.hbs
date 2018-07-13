@@ -1,0 +1,21 @@
+<nav class="navbar">
+    <a href="/auth/signup">signup</a>
+    <span>or</span>
+    <a href="/auth/login">login</a>
+</nav>
+<form id="form" action="/auth/signup" method="POST">
+    <label for="username">Name</label>
+    <input type="text" name="username" placeholder="Type your name">
+    <label for="useremail">Email</label>
+    <input type="email" name="useremail" placeholder="you@example.com">
+    <label for="password">Password</label>
+    <input type="password" name="password" placeholder="Create a password">
+    <input type="hidden" name="latitude" placeholder="Pick a lat">
+    <input type="hidden" name="longitude" placeholder="Pick a long">
+    <button>Create an account</button>
+    {{#if messages.length}}
+        <ul class="validation">
+        {{#each messages}}<li>{{this}}</li>{{/each}}
+        </ul>
+    {{/if}}
+</form>

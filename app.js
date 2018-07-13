@@ -4,14 +4,22 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
+const mongoose = require('mongoose');
 
 // require your own modules (router, models)
-const indexRouter = require('./routes/index');
-const usersRouter = require('./routes/users');
-
-const app = express();
+const index = require('./routes/index');
+const auth = require('./routes/auth');
+const trips = require('./routes/trips');
+const profile = require('./routes/profile');
 
 // create app connect to db
+mongoose.Promise = Promise;
+mongoose.connect('mongodb://localhost/dbmovies', {
+  keepAlive: true,
+  reconnectTries: Number.MAX_VALUE
+});
+
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -25,8 +33,10 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // -- routes
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/', index);
+app.use('/auth', auth);
+app.use('/trips', trips);
+app.use('/profile', profile);
 
 // -- 404 and error handler
 
