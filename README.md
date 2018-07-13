@@ -72,18 +72,29 @@ POST /trips/:id/flight/:flightnumber
 ## MODELS
 
 ```
-Event
+User
  - name: String
- - description: String
- - date: Date
- - location: String
- - attendees: ObjectId
+ - email: String
+ - password: String
 ```    
  
 ```
-User
- - username: String
- - password: String
+Trip
+ - title: String
+ - startDate: String
+ - endDate: String
+ - description: String
+ - groupcode: String
+ - participants:[UserID's]
+ - flights:[{
+    - airline:
+    - flightnumber:
+    - departureTime:
+    - arrivalTime:
+    - departingAirport:
+    - arrivingAirport:
+    - participants:[UserID's]
+ }]
 ```
 
 ## Links
@@ -96,7 +107,7 @@ User
 
 The url to your repository and to your deployed project
 
-[Repository Link](http://github.com)
+[Repository Link](https://github.com/gabogarciam/project-viaje)
 
 [Deploy Link](http://heroku.com)
 
