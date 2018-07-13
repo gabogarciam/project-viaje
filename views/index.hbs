@@ -3,5 +3,36 @@
     <span>or</span>
     <a href="/auth/login">login</a>
 </nav>
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<div>
+    <h1>{{title}}</h1>
+    <p>Welcome to {{title}}</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Maiores cupiditate fugit perferendis rerum, odit enim distinctio 
+        temporibus. Voluptatibus, delectus necessitatibus est nemo saepe, placeat autem soluta rem, adipisci sint ad.
+        Eveniet et nemo quod. Ut soluta tempore rerum laudantium, veniam consequatur, tenetur itaque accusamus cumque ipsum excepturi, 
+        vel illo tempora. Earum fugit consequatur amet, veniam culpa repellat ex excepturi impedit.
+        Fugiat iusto, delectus saepe veritatis asperiores mollitia itaque voluptatum, ipsum sint praesentium illo consequatur dolores 
+        error doloremque? Mollitia quasi obcaecati rem architecto aliquid, quo voluptas, quia, sapiente assumenda veritatis molestiae?
+        Ipsum tempora mollitia quod pariatur rerum aut, odit blanditiis veniam. Architecto laudantium, facilis dolore fugiat quam at 
+        sequi obcaecati eum officia quasi ex tenetur neque blanditiis voluptatem. A, cum nemo!
+        Aliquid, officia et deleniti ut perferendis dicta nesciunt excepturi commodi dignissimos natus impedit voluptates assumenda, 
+        quo, architecto laborum tenetur totam magnam ea! Rerum nisi debitis nemo corporis minus accusamus vel.
+    </p>
+</div>
+<div>
+    <form id="form" action="/auth/signup" method="POST">
+        <label for="username">Name</label>
+        <input type="text" name="username" placeholder="Type your name">
+        <label for="useremail">Email</label>
+        <input type="email" name="useremail" placeholder="you@example.com">
+        <label for="password">Password</label>
+        <input type="password" name="password" placeholder="Create a password">
+        <input type="hidden" name="latitude" placeholder="Pick a lat">
+        <input type="hidden" name="longitude" placeholder="Pick a long">
+        <button>Create an account</button>
+        {{#if messages.length}}
+            <ul class="validation">
+            {{#each messages}}<li>{{this}}</li>{{/each}}
+            </ul>
+        {{/if}}
+    </form>
+</div>
