@@ -122,7 +122,7 @@ router.post('/login', (req, res, next) => {
 
 router.post('/logout', (req, res, next) => {
   delete req.session.currentUser;
-  res.redirect('/auth/login');
+  res.redirect('/');
 });
 
 module.exports = router;

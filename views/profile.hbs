@@ -1,5 +1,9 @@
-<form action="/auth/logout" method="post">
-    <button>Logout</button>
-</form>
 <h1>Welcome {{currentUser.username}}</h1>
 <a href="/trips/new">Create new trip</a>
+
+{{#each this}}
+    <div>
+        <p>{{this.title}}</p>
+        <a href='trips/${{this._id}}'>link</a>
+    </div>
+{{/each}}
