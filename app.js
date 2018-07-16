@@ -5,6 +5,9 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const mongoose = require('mongoose');
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
+const flash = require('connect-flash');
 
 // require your own modules (router, models)
 const index = require('./routes/index');
@@ -14,7 +17,7 @@ const profile = require('./routes/profile');
 
 // create app connect to db
 mongoose.Promise = Promise;
-mongoose.connect('mongodb://localhost/dbmovies', {
+mongoose.connect('mongodb://localhost/db-viaje', {
   keepAlive: true,
   reconnectTries: Number.MAX_VALUE
 });
@@ -31,6 +34,23 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({
+  store: new MongoStore({
+    mongooseConnection: mongoose.connection,
+    ttl: 24 * 60 * 60 // 1 day
+  }),
+  secret: 'some-string',
+  resave: true,
+  saveUninitialized: true,
+  cookie: {
+    maxAge: 24 * 60 * 60 // 1 Day for each session
+  }
+}));
+app.use(function (req, res, next) {
+  app.locals.currentUser = req.session.currentUser;
+  next();
+});
+app.use(flash());
 
 // -- routes
 app.use('/', index);

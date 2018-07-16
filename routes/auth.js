@@ -10,9 +10,14 @@ const bcryptSalt = 10;
 // BCrypt to encrypt passwords
 const bcrypt = require('bcrypt');
 
-/* Get signup */
+// ---------- Signup Routes ---------- //
+
+/* GET users Signup. */
 router.get('/signup', (req, res, next) => {
-  res.render('auth/signup');
+  const data = {
+    messages: req.flash('signup-error')
+  };
+  res.render('auth/signup', data);
 });
 
 router.post('/signup', (req, res, next) => {
@@ -29,11 +34,44 @@ router.post('/signup', (req, res, next) => {
     email,
     password: hashPass
   });
-  newUser.save()
+
+  // Form validations
+  if (!username && !email && !password) {
+    req.flash('signup-error', 'Indicate a username, email and a password to sign up');
+    return res.redirect('signup');
+  } else if (username === '') {
+    req.flash('signup-error', 'Indicate a username to sign up');
+    return res.redirect('signup');
+  } else if (email === '') {
+    req.flash('signup-error', 'Indicate a email to sign up');
+    return res.redirect('signup');
+  } else if (password === '') {
+    req.flash('signup-error', 'Indicate a password to sign up');
+    return res.redirect('signup');
+  }
+
+  User.findOne({ 'username': username })
     .then(user => {
-      res.redirect('/');
+      if (user) {
+        req.flash('signup-error', 'The username already exists');
+        return res.redirect('signup');
+      } else {
+        newUser.save()
+          .then(user => {
+            req.session.currentUser = newUser;
+            return res.redirect('/');
+          })
+          .catch(error => {
+            next(error);
+          });
+      }
+    })
+    .catch(error => {
+      next(error);
     });
 });
+
+// ---------- Login Routes ---------- //
 
 // GET login //
 router.get('/login', (req, res, next) => {
@@ -43,6 +81,8 @@ router.get('/login', (req, res, next) => {
 router.post('/login', (req, res, next) => {
 
 });
+
+// ---------- Logout Routes ---------- //
 
 router.get('/logout', (req, res, next) => {
 
