@@ -42,7 +42,7 @@ a {
   font-size: 14px;
   padding: 8px 16px;
   text-decoration: none;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
   transition: .3s ease background;
   width: 100%;
 }
@@ -73,7 +73,7 @@ a {
   text-align: center;
 }
 
-.container img {
+.logo img {
   width: 100px;
   height: 100px;
 }
