@@ -50,10 +50,10 @@ router.post('/signup', (req, res, next) => {
     return res.redirect('signup');
   }
 
-  User.findOne({ 'username': username })
+  User.findOne({ 'email': email })
     .then(user => {
       if (user) {
-        req.flash('signup-error', 'The username already exists');
+        req.flash('signup-error', 'This email already has an account');
         return res.redirect('signup');
       } else {
         newUser.save()

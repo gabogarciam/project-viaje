@@ -1,10 +1,17 @@
 'use strict';
+
 const express = require('express');
 const router = express.Router();
 
-/* GET home page. */
+// ---------- Signup Routes ---------- //
+
+/* GET users Signup. */
 router.get('/', (req, res, next) => {
-  res.render('index', { title: 'Viaje' });
+  const data = {
+    messages: req.flash('signup-error')
+  };
+  // res.render('auth/signup', data);
+  res.render('index', data);
 });
 
 module.exports = router;
