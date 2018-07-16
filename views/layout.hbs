@@ -5,17 +5,28 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <nav class="navbar">
-      {{#if currentUser}}
-        <form action="/auth/logout" method="POST">
-          <button>Log out</button>
-        </form> 
-      {{else}}
-        <a href="/">signup</a>
-        <span>or</span>
-        <a href="/auth/login">login</a>
-      {{/if}}
-    </nav>
+    <header>
+      <nav class="main-navbar">
+        <div class="trips-brand">
+          <img src="/images/2000px-Backpack_icon.png" alt="">
+        </div>
+        <div class="trips-nav">
+          {{#if currentUser}}
+            <form action="/auth/logout" method="POST">
+              <button>Log out</button>
+            </form>
+          {{else}}
+          <a href="/">signup</a>
+          <span>or</span>
+          <a href="/auth/login">login</a>
+          {{/if}}
+        </div>
+      </nav>
+    </header>
+
     {{{body}}}
+    <footer>
+      footer
+    </footer>
   </body>
 </html>

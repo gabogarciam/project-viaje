@@ -1,8 +1,12 @@
 <h1>Welcome {{currentUser.username}}</h1>
-<a href="/trips/new">Create new trip</a>
-
-{{#each this}}
-    <div>
-        <a href='trips/${{this._id}}'><p>{{this.title}}</p></a>
-    </div>
-{{/each}}
+<div>
+    <a href="/trips/new">Create new trip</a>
+</div>
+<div>
+    <h2>My trips</h2>
+    {{#each this}}
+        <div>
+            <a href='trips/${{this._id}}'><span>{{this.title}}</span></a>
+        </div>
+    {{/each}}
+</div>

@@ -63,9 +63,20 @@ a {
   list-style: none;
 }
 
-.navbar {
-  background-color: lightpink;
+.main-navbar {
+  background: lightskyblue;
+  border: 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,.15);
+  display: flex;
+  margin: 0;
+  padding: 0;
 }
+
+.trips-brand {
+  width: 10%;
+  height: 10%;
+}
+
 .container {
   display: flex;
   flex-direction: column;
