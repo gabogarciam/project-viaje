@@ -73,19 +73,56 @@ router.post('/signup', (req, res, next) => {
 
 // ---------- Login Routes ---------- //
 
-// GET login //
+/* GET users login. */
 router.get('/login', (req, res, next) => {
-  res.render('auth/login');
+  if (req.session.currentUser) {
+    res.redirect('/');
+    return;
+  }
+  const data = {
+    messages: req.flash('login-error')
+  };
+  res.render('auth/login', data);
 });
 
+/* POST users login. */
 router.post('/login', (req, res, next) => {
+  const email = req.body.email;
+  const password = req.body.password;
 
+  if (!email) {
+    req.flash('login-error', 'Indicate a email to sign up');
+    return res.redirect('login');
+  }
+
+  if (!password) {
+    req.flash('login-error', 'Indicate a password to sign up');
+    return res.redirect('login');
+  }
+
+  User.findOne({ 'email': email })
+    .then(user => {
+      if (!user) {
+        req.flash('login-error', 'the username doesn\'t exist');
+        return res.redirect('login');
+      }
+      if (!bcrypt.compareSync(req.body.password, user.password)) {
+        req.flash('login-error', 'Username or password are incorrect');
+        return res.redirect('login');
+      }
+      req.session.currentUser = user;
+      res.redirect('/profile');
+    })
+    .catch(error => {
+      next(error);
+    });
 });
 
-// ---------- Logout Routes ---------- //
+// Logout POST
 
-router.get('/logout', (req, res, next) => {
-
+router.post('/logout', (req, res, next) => {
+  delete req.session.currentUser;
+  res.redirect('login');
 });
 
 module.exports = router;
