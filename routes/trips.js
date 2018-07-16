@@ -3,8 +3,35 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/', (req, res, next) => {
+const Trip = require('../models/trip');
 
+router.get('/new', (req, res, next) => {
+  res.render('newtrip');
+});
+
+router.post('/', (req, res, next) => {
+  console.log(req.session.currentUser);
+  const title = req.body.tripTitle;
+  const startDate = req.body.startDate;
+  const endDate = req.body.endDate;
+  const description = req.body.description;
+  const participants = req.session.currentUser._id;
+
+  const newTrip = Trip({
+    title,
+    startDate,
+    endDate,
+    description,
+    participants
+  });
+
+  newTrip.save()
+    .then(() => {
+      return res.redirect('/profile');
+    })
+    .catch(error => {
+      next(error);
+    });
 });
 
 module.exports = router;

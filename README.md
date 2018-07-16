@@ -55,7 +55,7 @@ POST /trips/:id/edit - We send the trip id directly in the post
 ## TRIP CREATION
 ```
 GET /trips/new
-POST /trips/:id - We send the trip id directly in the post
+POST /trips - We send the trip id directly in the post
 ```
 ## ADDING TO FLIGHT
 ```
