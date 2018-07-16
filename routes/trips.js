@@ -10,7 +10,6 @@ router.get('/new', (req, res, next) => {
 });
 
 router.post('/', (req, res, next) => {
-  console.log(req.session.currentUser);
   const title = req.body.tripTitle;
   const startDate = req.body.startDate;
   const endDate = req.body.endDate;
