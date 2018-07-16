@@ -59,7 +59,7 @@ router.post('/signup', (req, res, next) => {
         newUser.save()
           .then(user => {
             req.session.currentUser = newUser;
-            return res.redirect('/');
+            return res.redirect('/profile');
           })
           .catch(error => {
             next(error);
