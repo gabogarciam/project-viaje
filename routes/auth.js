@@ -38,23 +38,23 @@ router.post('/signup', (req, res, next) => {
   // Form validations
   if (!username && !email && !password) {
     req.flash('signup-error', 'Indicate a username, email and a password to sign up');
-    return res.redirect('signup');
+    return res.redirect('/');
   } else if (username === '') {
     req.flash('signup-error', 'Indicate a username to sign up');
-    return res.redirect('signup');
+    return res.redirect('/');
   } else if (email === '') {
     req.flash('signup-error', 'Indicate a email to sign up');
-    return res.redirect('signup');
+    return res.redirect('/');
   } else if (password === '') {
     req.flash('signup-error', 'Indicate a password to sign up');
-    return res.redirect('signup');
+    return res.redirect('/');
   }
 
   User.findOne({ 'email': email })
     .then(user => {
       if (user) {
         req.flash('signup-error', 'This email already has an account');
-        return res.redirect('signup');
+        return res.redirect('/');
       } else {
         newUser.save()
           .then(user => {
