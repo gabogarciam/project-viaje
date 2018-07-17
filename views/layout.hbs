@@ -5,23 +5,24 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
   </head>
   <body>
-    <header>
-      <nav class="main-navbar">
-        <div class="trips-brand">
-          <img src="/images/2000px-Backpack_icon.png" alt="">
+    <header class="viaje-header">
+      <div class="main-header">
+        <div class="viaje-brand">
+          <div class="viaje-brand-logo"></div>
+          <span>Viaje</span>
         </div>
-        <div class="trips-nav">
-          {{#if currentUser}}
-            <form action="/auth/logout" method="POST">
-              <button>Log out</button>
-            </form>
-          {{else}}
-          <a href="/">signup</a>
-          <span>or</span>
-          <a href="/auth/login">login</a>
-          {{/if}}
-        </div>
-      </nav>
+      <div>
+        {{#if currentUser}}
+          <form action="/auth/logout" method="POST">
+            <button>Log out</button>
+          </form>
+        {{else}}
+        <a href="/">signup</a>
+        <span>or</span>
+        <a href="/auth/login">login</a>
+        {{/if}}
+      </div>
+      </div>
     </header>
 
     {{{body}}}

@@ -63,18 +63,24 @@ a {
   list-style: none;
 }
 
-.main-navbar {
-  background: lightskyblue;
+.main-header {
+  display: flex;
+  background: #fff;
   border: 0;
   box-shadow: 0 2px 5px rgba(0,0,0,.15);
-  display: flex;
   margin: 0;
   padding: 0;
 }
 
-.trips-brand {
-  width: 10%;
-  height: 10%;
+.viaje-brand {
+  display: flex;
+}
+
+.viaje-brand-logo {
+  background-image: url('/images/2000px-Backpack_icon.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 150px;
 }
 
 .container {
@@ -85,6 +91,5 @@ a {
 }
 
 .logo img {
-  width: 100px;
   height: 100px;
 }
