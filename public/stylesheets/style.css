@@ -13,24 +13,40 @@ body {
   margin: 0 auto;
 }
 
+
+
 /* ---- typography ---- */
 
-.contain {
-  margin: 0 10px;
-}
+
 
 .links {
   color: #00B7FF;
   text-decoration: none;
 }
 
-.index-form{
+
+
+/* ---- layout ---- */
+
+
+
+.contain {
+  margin: 0 10px;
+}
+
+
+
+/* ---- forms ---- */
+
+
+
+.form{
   margin-top: 15px;
   margin-bottom: 15px;
 }
 
-.index-form input,
-.index-form button {
+.form input,
+.form button {
   box-sizing: border-box;
   font-size: 10px;
   outline: 0;
@@ -41,7 +57,7 @@ body {
   margin: 8px 0;
 }
   
-.index-form button {
+.form button {
   background: #43a3e6;
   color: white;
   border: 1px solid #43a3e6;
@@ -62,6 +78,12 @@ body {
   width: 100%;
   list-style: none;
 }
+
+
+
+/* ---- header ---- */
+
+
 
 nav {
   height: 60px;
@@ -85,20 +107,15 @@ nav {
   color: #545454;
 }
 
-.wallpaper {
-  width: 100%;
-}
-
 .login-logout {
   margin: auto 0;
 }
 
-.hero-text{
-  display: block;
-  text-align: center;
-  font-weight: lighter;
-  margin: 20px 10px;
-}
+
+
+/* ---- footer ---- */
+
+
 
 footer {
   background-color: rgb(209, 255, 245);
@@ -122,8 +139,27 @@ ul h5{
   margin: 0;
 }
 
-.legal-text {
+footer .legal-text {
   width: 100%;
   text-align: center;
   margin-top: 10px;
 }
+
+
+
+/* ---- index ---- */
+
+
+
+.hero-image {
+  width: 100%;
+}
+
+.hero-text{
+  display: block;
+  text-align: center;
+  font-weight: lighter;
+  margin: 20px 10px;
+}
+
+
