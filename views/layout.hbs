@@ -12,8 +12,8 @@
   <header>
     <nav>
       <div class="logo-brandname">
-        <img class="logo-nav" src="/images/2000px-Backpack_icon.png" alt="viaje-logo">
-        <h1>Viaje</h1>
+        <a href="/"><img class="logo-nav" src="/images/2000px-Backpack_icon.png" alt="viaje-logo"></a>
+        <a href="/"><h1>Viaje</h1></a>
       </div>
       <div class="login-logout">
         {{#if currentUser}}
@@ -21,8 +21,7 @@
             <form class="links" action="/auth/logout" method="POST">
               <a class="links" href="/profile">Profile</a>
               <button>Log out</button>
-            </form>
-           
+            </form>           
           </div>
         {{else}}
           <a class="links" href="/#signup">Signup</a>
