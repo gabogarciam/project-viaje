@@ -63,28 +63,42 @@ a {
   list-style: none;
 }
 
-.main-navbar {
-  background: lightskyblue;
+.logo-nav {
+  height: 120px;
+}
+
+nav {
+  background: #fff;
   border: 0;
-  box-shadow: 0 2px 5px rgba(0,0,0,.15);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .15);
+  height: 175px;
   display: flex;
-  margin: 0;
-  padding: 0;
+  justify-content: space-between;
+  padding: 0 30px;
 }
 
 .trips-brand {
-  width: 10%;
-  height: 10%;
-}
-
-.container {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  justify-content: space-around;
+
 }
 
-.logo img {
-  width: 100px;
-  height: 100px;
+.trips-brand img {
+  margin: auto;
+  padding-right: 20px;
+}
+
+.trips-brand span {
+  margin: auto 0;
+  text-align: right;
+  font-size: 70px;
+  color: #545454;
+  letter-spacing: 0.5px;
+  font-family: 'Product Sans', Arial, Helvetica, sans-serif;
+}
+
+.trips-nav {
+  font-size: 35px;
+  margin: auto 0;
+  text-align: right;
 }
