@@ -21,13 +21,11 @@ router.get('/signup', (req, res, next) => {
 });
 
 router.post('/signup', (req, res, next) => {
-  // console.log(req.body);
   const username = req.body.username;
   const email = req.body.email;
   const password = req.body.password;
   const salt = bcrypt.genSaltSync(bcryptSalt);
   const hashPass = bcrypt.hashSync(password, salt);
-  // console.log(hashPass);
 
   const newUser = User({
     username,

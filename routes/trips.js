@@ -33,4 +33,20 @@ router.post('/', (req, res, next) => {
     });
 });
 
+router.get('/:id', (req, res, next) => {
+  if (!req.session.currentUser) {
+    return res.render('auth/signup');
+  }
+  const tripId = req.params.id;
+  console.log(req.params);
+
+  Trip.findById(tripId)
+    .then((result) => {
+      res.render('trip-detail', result);
+    })
+    .catch(error => {
+      next(error);
+    });
+});
+
 module.exports = router;
