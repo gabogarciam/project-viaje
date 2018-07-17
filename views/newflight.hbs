@@ -1,13 +1,17 @@
 <form id="form" action="/trips" method="POST">
-    <label for="">Title</label>
-    <input type="text" name="tripTitle" placeholder="trip name">
-    <label for="">Start Date</label>
-    <input type="date" name="startDate" placeholder="start date">
-    <label for="">End Date</label>
-    <input type="date" name="endDate" placeholder="end date">
-    <label for="">Description</label>
-    <input type="text" name="description" placeholder="description">
-    <button>Create trip</button>
+    <label for="">Airline</label>
+    <input type="text" name="airline" placeholder="Airline">
+    <label for="">Flight Number</label>
+    <input type="text" name="flightNumber" placeholder="Flight Number">
+    <label for="">Where from?</label>
+    <input type="text" name="wherefrom" placeholder="Where from?">
+    <label for="">Where to</label>
+    <input type="text" name="whereto" placeholder="Where to?">
+    <label for="">Departure Time</label>
+    <input type="datetime-local" name="departureTime" placeholder="Departure Time">
+    <label for="">Arrival Time</label>
+    <input type="datetime-local" name="arrivalTime" placeholder="Arrival Time">
+    <button>Create flight</button>
     {{#if messages.length}}
         <ul class="validation">
         {{#each messages}}<li>{{this}}</li>{{/each}}

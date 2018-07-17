@@ -26,7 +26,18 @@ const tripSchema = new Schema({
     ref: 'User'
   }],
   flights: [{
+    airline: {
+      type: String
+    },
     flightNumber: {
+      type: String
+    //   required: true
+    },
+    departingAirport: {
+      type: String
+    //   required: true
+    },
+    arrivingAirport: {
       type: String
     //   required: true
     },
@@ -36,14 +47,6 @@ const tripSchema = new Schema({
     },
     arrivalTime: {
       type: Date
-    //   required: true
-    },
-    departingAirport: {
-      type: String
-    //   required: true
-    },
-    arrivingAirport: {
-      type: String
     //   required: true
     },
     passangers: [{

@@ -53,4 +53,8 @@ router.get('/:id/flight', (req, res, next) => {
   res.render('newflight');
 });
 
+// router.post('/trips/:id/flight', (req, res, next) => {
+
+// });
+
 module.exports = router;
