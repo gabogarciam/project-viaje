@@ -1,17 +1,21 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>{{title}}</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <header>
-      <nav class="main-navbar">
+<!doctype html>
+<html lang="en">
+
+<head>
+  <title>{{title}}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <header>
+      <nav class="contain main-navbar ">
         <div class="trips-brand">
           <img class ="logo-nav" src="/images/2000px-Backpack_icon.png" alt="viaje-logo">
           <span>Viaje</span>
         </div>
-      <div class="trips-nav">
+      <div class="login-logout">
         {{#if currentUser}}
           <form action="/auth/logout" method="POST">
             <button>Log out</button>
@@ -29,5 +33,5 @@
     <footer>
       footer
     </footer>
-  </body>
+</body>
 </html>

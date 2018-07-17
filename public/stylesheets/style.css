@@ -1,51 +1,62 @@
+/* ---- reset ---- */
+
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
   padding: 0;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-family: 'Product Sans', Arial, Helvetica, sans-serif;
   margin: 0 auto;
 }
 
+
+/* ---- typography ---- */
+
 .contain {
-  width: 80%;
-  margin: 0 auto;
+  margin: 0 10px;
 }
 
 a {
   color: #00B7FF;
 }
 
-#form {
-  margin: 0 auto;
-  width: 80%;
+
+.index-form {
+  margin-bottom: 20px;
 }
 
-#form input,
-#form button {
+.index-form input,
+.index-form button {
   box-sizing: border-box;
-  font-size: 50px;
+  font-size: 10px;
   outline: 0;
   width: 100%;
   border: 1px solid #545454;
   border-radius: 10px;
-  padding: 30px;
-  margin: 20px 0;
+  padding: 10px;
+  margin: 10px 0;
 }
   
-#form button {
+.index-form button {
   background: #43a3e6;
   border: 1px solid #43a3e6;
   border-radius: 10px;
-  padding: 30px;
+  padding: 10px;
   color: #fff;
   cursor: pointer;
   display: inline-block;
-  font-size: 50px;
+  font-size: 10px;
   text-decoration: none;
   /* text-transform: uppercase; */
   transition: .3s ease background;
   width: 100%;
 }
 
-#form button:hover {
+.index-form button:hover {
   background: #fff;
   color: #43a3e6;
   transition: .3s ease background;
@@ -55,55 +66,39 @@ a {
   background: #F02B63;
   box-sizing: border-box;
   color: #fff;
-  margin: 20px auto;
-  padding: 20px;
+  margin: 10px auto;
+  padding: 10px;
   width: 100%;
   list-style: none;
 }
-/*
-test
-*/
+
 .logo-nav {
-  height: 120px;
+  height: 50px;
 }
 
 nav {
-  background: #fff;
   border: 0;
   box-shadow: 0 2px 5px rgba(0, 0, 0, .15);
-  height: 175px;
+  height: 70px;
   display: flex;
   justify-content: space-between;
-  padding: 0 30px;
+  padding: 10px;
 }
 
 .trips-brand {
   display: flex;
   justify-content: space-around;
-
-}
-
-.trips-brand img {
-  margin: auto;
-  padding-right: 20px;
-}
-
-.trips-brand span {
-  margin: auto 0;
   text-align: right;
-  font-size: 70px;
+  font-size: 20px;
   color: #545454;
-  letter-spacing: 0.5px;
-  font-family: 'Product Sans', Arial, Helvetica, sans-serif;
+  margin: auto 0;
 }
 
-.trips-nav {
-  font-size: 35px;
+.login-logout {
+  font-size: 15px;
   margin: auto 0;
-  text-align: right;
 }
 
 .wallpaper img {
-  
   width: 100%;
 }
