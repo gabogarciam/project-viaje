@@ -17,9 +17,12 @@
       </div>
       <div class="login-logout">
         {{#if currentUser}}
-          <form action="/auth/logout" method="POST">
-            <button>Log out</button>
-          </form>
+          <div>
+            <form action="/auth/logout" method="POST">
+              <button>Log out</button>
+            </form>
+            <a href="/profile">Profile</a>
+          </div>
         {{else}}
           <a class="links" href="/#signup">Signup</a>
           <span>or</span>
