@@ -91,10 +91,17 @@ nav {
   color: #545454;
 }
 
-.wallpaper img {
+.wallpaper {
   width: 100%;
 }
 
 .login-logout {
   margin: auto 0;
+}
+
+.hero-text{
+  display: block;
+  text-align: center;
+  font-weight: lighter;
+  margin: 20px 10px;
 }
