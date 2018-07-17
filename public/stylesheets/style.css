@@ -20,7 +20,7 @@ body {
 
 
 .links {
-  color: #6dc2ff;
+  color: #ffc06d;
   text-decoration: none;
 }
 
@@ -97,7 +97,7 @@ nav {
 }
 
 .logo-nav {
-  height: 50px;
+  height: 45px;
   margin-right: 10px;
 }
 
@@ -112,6 +112,11 @@ nav {
 
 .login-logout {
   margin: auto 0;
+}
+
+.login-logout button{
+  font-size: 14px;
+  color: #545454;
 }
 
 
