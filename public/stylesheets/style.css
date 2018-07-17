@@ -46,7 +46,6 @@ a {
   border: 1px solid #43a3e6;
   border-radius: 10px;
   padding: 10px;
-  color: #fff;
   cursor: pointer;
   display: inline-block;
   font-size: 10px;
@@ -57,7 +56,6 @@ a {
 }
 
 .index-form button:hover {
-  background: #fff;
   color: #43a3e6;
   transition: .3s ease background;
 }
@@ -72,33 +70,31 @@ a {
   list-style: none;
 }
 
+nav {
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  margin: auto 0;
+  font-size: 15px;
+  padding: 0 10px;
+}
+
 .logo-nav {
   height: 50px;
 }
 
-nav {
-  border: 0;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, .15);
-  height: 70px;
-  display: flex;
-  justify-content: space-between;
-  padding: 10px;
-}
-
-.trips-brand {
+.logo-brandname {
   display: flex;
   justify-content: space-around;
+  align-items: center;
   text-align: right;
-  font-size: 20px;
   color: #545454;
-  margin: auto 0;
-}
-
-.login-logout {
-  font-size: 15px;
-  margin: auto 0;
 }
 
 .wallpaper img {
   width: 100%;
+}
+
+.login-logout {
+  margin: auto 0;
 }

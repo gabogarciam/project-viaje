@@ -10,28 +10,27 @@
 
 <body>
   <header>
-      <nav class="contain main-navbar ">
-        <div class="trips-brand">
-          <img class ="logo-nav" src="/images/2000px-Backpack_icon.png" alt="viaje-logo">
-          <span>Viaje</span>
-        </div>
+    <nav>
+      <div class="logo-brandname">
+        <img class="logo-nav" src="/images/2000px-Backpack_icon.png" alt="viaje-logo">
+        <h1>Viaje</h1>
+      </div>
       <div class="login-logout">
         {{#if currentUser}}
           <form action="/auth/logout" method="POST">
             <button>Log out</button>
           </form>
         {{else}}
-        <a href="/">signup</a>
-        <span>or</span>
-        <a href="/auth/login">login</a>
+          <a href="/">signup</a>
+          <span>or</span>
+          <a href="/auth/login">login</a>
         {{/if}}
       </div>
-      </div>
-    </header>
-
-    {{{body}}}
-    <footer>
-      footer
-    </footer>
+    </nav>
+  </header>
+  {{{body}}}
+  <footer>
+    footer
+  </footer>
 </body>
 </html>
