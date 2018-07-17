@@ -49,4 +49,8 @@ router.get('/:id', (req, res, next) => {
     });
 });
 
+router.get('/:id/flight', (req, res, next) => {
+  res.render('newflight');
+});
+
 module.exports = router;

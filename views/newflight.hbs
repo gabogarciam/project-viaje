@@ -1,0 +1,16 @@
+<form id="form" action="/trips" method="POST">
+    <label for="">Title</label>
+    <input type="text" name="tripTitle" placeholder="trip name">
+    <label for="">Start Date</label>
+    <input type="date" name="startDate" placeholder="start date">
+    <label for="">End Date</label>
+    <input type="date" name="endDate" placeholder="end date">
+    <label for="">Description</label>
+    <input type="text" name="description" placeholder="description">
+    <button>Create trip</button>
+    {{#if messages.length}}
+        <ul class="validation">
+        {{#each messages}}<li>{{this}}</li>{{/each}}
+        </ul>
+    {{/if}}
+</form>
