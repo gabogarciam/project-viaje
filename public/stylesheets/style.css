@@ -63,33 +63,47 @@ a {
   list-style: none;
 }
 
-.main-header {
-  display: flex;
+.logo-nav {
+  height: 120px;
+}
+
+nav {
   background: #fff;
   border: 0;
-  box-shadow: 0 2px 5px rgba(0,0,0,.15);
-  margin: 0;
-  padding: 0;
-}
-
-.viaje-brand {
+  box-shadow: 0 2px 5px rgba(0, 0, 0, .15);
+  height: 175px;
   display: flex;
+  justify-content: space-between;
+  padding: 0 30px;
 }
 
-.viaje-brand-logo {
-  background-image: url('/images/2000px-Backpack_icon.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 150px;
-}
-
-.container {
+.trips-brand {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+  justify-content: space-around;
+
 }
 
+.trips-brand img {
+  margin: auto;
+  padding-right: 20px;
+}
+
+.trips-brand span {
+  margin: auto 0;
+  text-align: right;
+  font-size: 70px;
+  color: #545454;
+  letter-spacing: 0.5px;
+  font-family: 'Product Sans', Arial, Helvetica, sans-serif;
+}
+
+<<<<<<< HEAD
 .logo img {
   height: 100px;
+=======
+.trips-nav {
+  font-size: 35px;
+  margin: auto 0;
+  text-align: right;
+>>>>>>> 6adf637d1d72ad98476aa5f898f989f8ac618cdf
 }
