@@ -16,7 +16,6 @@ router.post('/', (req, res, next) => {
   const description = req.body.description;
   const participants = req.session.currentUser._id;
 
-
   const newTrip = Trip({
     title,
     startDate,
