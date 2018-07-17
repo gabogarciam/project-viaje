@@ -107,6 +107,7 @@ nav {
   align-items: center;
   text-align: right;
   color: #545454;
+  text-decoration: none;
 }
 
 .login-logout {
