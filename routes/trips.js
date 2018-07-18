@@ -53,7 +53,7 @@ router.get('/:id/flight', (req, res, next) => {
   res.render('newflight');
 });
 
-router.post('/trips/:id/flight', (req, res, next) => {
+router.post('/:id/flight', (req, res, next) => {
   const airline = req.body.airline;
   const flightNumber = req.body.flightNumber;
   const departingAirport = req.body.departingAirport;
