@@ -1,9 +1,15 @@
-<a href="/profile">Volver</a>
-<h1>Trip detail</h1>
-<div>
-<h2>{{this.title}}</h2>
-<p>{{this.description}}</p>
-<p>{{this.startDate}}</p>
-<p>{{this.endDate}}</p>
+<div class="create-back-button">
+    <a href="/profile">BACK</a>
 </div>
-<a href="/trips/{{this._id}}/flight">Create flight</a>
+<div class="contain">
+    <h1>Trip detail</h1>
+    <div>
+        <h2>{{this.title}}</h2>
+        <p>{{this.description}}</p>
+        <p>{{this.startDate}}</p>
+        <p>{{this.endDate}}</p>
+    </div>
+    <div class="create-trip-button">
+        <a href="/trips/{{this._id}}/flight">Create flight</a>
+    </div>
+</div>
