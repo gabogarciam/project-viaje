@@ -73,6 +73,7 @@ router.post('/:id/flight', (req, res, next) => {
   Trip.findByIdAndUpdate(id, {
     $push: {
       flights: {
+        passengers: [ req.session.currentUser._id ],
         airline: airline,
         flightNumber: flightNumber,
         departingAirport: departingAirport,
