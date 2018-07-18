@@ -1,12 +1,12 @@
-<form id="form" action="/trips" method="POST">
+<form id="form" action="/trips/{{id}}/flight" method="POST">
     <label for="">Airline</label>
     <input type="text" name="airline" placeholder="Airline">
     <label for="">Flight Number</label>
     <input type="text" name="flightNumber" placeholder="Flight Number">
     <label for="">Where from?</label>
-    <input type="text" name="wherefrom" placeholder="Where from?">
+    <input type="text" name="departingAirport" placeholder="Where from?">
     <label for="">Where to</label>
-    <input type="text" name="whereto" placeholder="Where to?">
+    <input type="text" name="arrivingAirport" placeholder="Where to?">
     <label for="">Departure Time</label>
     <input type="datetime-local" name="departureTime" placeholder="Departure Time">
     <label for="">Arrival Time</label>

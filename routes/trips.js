@@ -53,8 +53,31 @@ router.get('/:id/flight', (req, res, next) => {
   res.render('newflight');
 });
 
-// router.post('/trips/:id/flight', (req, res, next) => {
+router.post('/trips/:id/flight', (req, res, next) => {
+  const airline = req.body.airline;
+  const flightNumber = req.body.flightNumber;
+  const departingAirport = req.body.departingAirport;
+  const arrivingAirport = req.body.arrivingAirport;
+  const departureTime = req.body.departureTime;
+  const arrivalTime = req.body.arrivalTime;
 
-// });
+  const id = req.params.id;
+  Trip.findByIdAndUpdate(id, {
+    flights: {$push: {airline: airline,
+      flightNumber: flightNumber,
+      departingAirport: departingAirport,
+      arrivingAirport: arrivingAirport,
+      departureTime: departureTime,
+      arrivalTime: arrivalTime
+    } }
+  })
+    .then(() => {
+      res.render('/profile');
+      // recuerda hacer save()
+    })
+    .catch(error => {
+      next(error);
+    });
+});
 
 module.exports = router;
