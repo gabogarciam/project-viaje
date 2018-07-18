@@ -50,7 +50,15 @@ router.get('/:id', (req, res, next) => {
 });
 
 router.get('/:id/flight', (req, res, next) => {
-  res.render('newflight');
+  const tripId = req.params.id;
+
+  Trip.findById(tripId)
+    .then((trip) => {
+      res.render('newflight', trip);
+    })
+    .catch(error => {
+      next(error);
+    });
 });
 
 router.post('/:id/flight', (req, res, next) => {
@@ -63,16 +71,19 @@ router.post('/:id/flight', (req, res, next) => {
 
   const id = req.params.id;
   Trip.findByIdAndUpdate(id, {
-    flights: {$push: {airline: airline,
-      flightNumber: flightNumber,
-      departingAirport: departingAirport,
-      arrivingAirport: arrivingAirport,
-      departureTime: departureTime,
-      arrivalTime: arrivalTime
-    } }
+    $push: {
+      flights: {
+        airline: airline,
+        flightNumber: flightNumber,
+        departingAirport: departingAirport,
+        arrivingAirport: arrivingAirport,
+        departureTime: departureTime,
+        arrivalTime: arrivalTime
+      }
+    }
   })
     .then(() => {
-      res.render('/profile');
+      return res.redirect('/profile');
       // recuerda hacer save()
     })
     .catch(error => {
