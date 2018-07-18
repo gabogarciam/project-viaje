@@ -49,7 +49,7 @@ const tripSchema = new Schema({
       type: Date
     //   required: true
     },
-    passangers: [{
+    passengers: [{
       type: ObjectId,
       ref: 'User'
     }]
