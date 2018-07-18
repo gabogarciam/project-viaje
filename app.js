@@ -1,5 +1,6 @@
 'use strict';
 // require npm packages
+require('dotenv').config();
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
@@ -17,7 +18,7 @@ const profile = require('./routes/profile');
 
 // create app connect to db
 mongoose.Promise = Promise;
-mongoose.connect('mongodb://localhost/db-viaje', {
+mongoose.connect(process.env.MONGODB_URI, {
   keepAlive: true,
   reconnectTries: Number.MAX_VALUE
 });
