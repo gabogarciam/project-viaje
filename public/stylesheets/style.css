@@ -11,6 +11,7 @@ body {
   padding: 0;
   font-family: 'Product Sans', Arial, Helvetica, sans-serif;
   margin: 0 auto;
+  color: #545454;
 }
 
 
@@ -48,12 +49,12 @@ body {
 .form input,
 .form button {
   box-sizing: border-box;
-  font-size: 10px;
   outline: 0;
   width: 100%;
   border: 1px solid #545454;
   border-radius: 8px;
   padding: 10px;
+  font-size: 15px;
   margin: 8px 0;
 }
   
@@ -63,7 +64,7 @@ body {
   border: 1px solid #6dc2ff;
   border-radius: 8px;
   padding: 10px;
-  font-size: 10px;
+  font-size: 15px;
   text-decoration: none;
   width: 100%;
 }
@@ -92,7 +93,7 @@ nav {
   margin: auto 0;
   font-size: 15px;
   padding: 0 10px;
-  background-color: rgb(250, 249, 221);
+  background-color: rgb(239, 255, 240);
   border-bottom: 1px solid #d1d1d1;
 }
 
@@ -116,7 +117,6 @@ nav {
 
 .login-logout button{
   font-size: 14px;
-  color: #545454;
 }
 
 
@@ -126,8 +126,7 @@ nav {
 
 
 footer {
-  background-color: rgb(250, 249, 221);
-  color: #545454;
+  background-color: rgb(239, 255, 240);
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -175,3 +174,91 @@ footer .legal-text {
 
 
 /* ---- login ---- */
+
+
+
+.login-contain{
+  margin-bottom: 20px;
+}
+
+.signin-header{
+  text-align: center;
+}
+
+.create-account{
+  display: block;
+  text-align: center;
+}
+
+
+
+/* ---- profile ---- */
+
+
+
+.welcome-user{
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.user-trips h2{
+  text-decoration: underline;
+  width: 100%;
+  margin: 0;
+}
+
+.user-trips{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.user-card{
+  width: 50%;
+}
+
+.user-card a {
+  text-decoration: none;
+  font-size: 20px;
+  background: rgb(255, 251, 248);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+  display: block;
+  padding: 10px;
+  margin: 5px;
+  color: #383838;
+}
+
+.create-trip-button{
+  background: #6dc2ff;
+  border: 1px solid #6dc2ff;
+  border-radius: 8px;
+  padding: 5px;
+  margin: 10px auto;
+  width: 40%;
+  text-align: center;
+}
+
+.create-trip-button a{ 
+  color: white;
+  font-size: 15px;
+  text-decoration: none;
+}
+
+
+
+/* ---- new trip ---- */
+
+.create-back-button{
+  background: #4b8aff;
+  border: 1px solid #4b8aff;
+  border-radius: 8px;
+  padding: 1px;
+  margin: 10px;
+  width: 20%;
+  text-align: center;
+}
+
+.create-back-button a{ 
+  color: rgb(255, 255, 255);
+  font-size: 10px;
+  text-decoration: none;
+}

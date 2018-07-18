@@ -1,14 +1,16 @@
-<h1>Welcome {{currentUser.username}}</h1>
-<div>
-    <h2>Your trips</h2>
-    {{#each this}}
-        <div>
-            <a href='trips/{{this._id}}'>
-            <span>{{this.title}}</span>
-            </a>
-        </div>
-    {{/each}}
-</div>
-<div>
-    <a href="/trips/new">+ Create new trip</a>
+<div class="contain">
+    <h1 class="welcome-user">Welcome {{currentUser.username}}</h1>
+    <div class="user-trips">
+        <h2 >Your trips:</h2>
+        {{#each this}}
+            <div class="user-card">
+                <a href='trips/{{this._id}}'>
+                <span>{{this.title}}</span>
+                </a>
+            </div>
+        {{/each}}
+    </div>
+    <div class="create-trip-button">
+        <a href="/trips/new">+ Create trip</a>
+    </div>
 </div>
