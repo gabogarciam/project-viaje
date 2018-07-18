@@ -62,9 +62,9 @@ body {
 }
   
 .form button {
-  background: #6dc2ff;
+  background: #ffa26d;
   color: white;
-  border: 1px solid #6dc2ff;
+  border: 1px solid #ffa26d;
   border-radius: 8px;
   padding: 10px;
   font-size: 15px;
@@ -157,7 +157,7 @@ ul h5{
 footer .legal-text {
   width: 100%;
   text-align: center;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 
@@ -205,6 +205,7 @@ footer .legal-text {
 .welcome-user{
   margin-bottom: 20px;
   text-align: center;
+
 }
 
 .user-trips h2{
@@ -289,4 +290,8 @@ footer .legal-text {
   color: white;
   font-size: 10px;
   text-decoration: none;
+}
+
+.trip-header {
+  margin: 0;
 }
