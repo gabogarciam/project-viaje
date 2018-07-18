@@ -35,6 +35,9 @@ body {
   margin: 0 10px;
 }
 
+.contain-page{
+  min-height: calc(100vh - 120px);
+}
 
 
 /* ---- forms ---- */
@@ -117,6 +120,8 @@ nav {
 
 .login-logout button{
   font-size: 14px;
+  background-color: transparent;
+  border: none;
 }
 
 
@@ -203,7 +208,6 @@ footer .legal-text {
 
 .user-trips h2{
   text-decoration: underline;
-  width: 100%;
   margin: 0;
 }
 
@@ -212,8 +216,17 @@ footer .legal-text {
   flex-wrap: wrap;
 }
 
+.add-trip-button{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
 .user-card{
-  width: 50%;
+  width: 100%;
 }
 
 .user-card a {
@@ -230,16 +243,15 @@ footer .legal-text {
 .create-trip-button{
   background: #6dc2ff;
   border: 1px solid #6dc2ff;
-  border-radius: 8px;
+  border-radius: 30px;
   padding: 5px;
-  margin: 10px auto;
-  width: 40%;
+  width: 15%;
   text-align: center;
 }
 
 .create-trip-button a{ 
   color: white;
-  font-size: 15px;
+  font-size: 30px;
   text-decoration: none;
 }
 

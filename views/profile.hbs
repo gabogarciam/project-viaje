@@ -1,7 +1,13 @@
 <div class="contain">
     <h1 class="welcome-user">Welcome {{currentUser.username}}</h1>
     <div class="user-trips">
-        <h2 >Your trips:</h2>
+        <div class="add-trip-button">
+            <h2 >Your trips:</h2>
+            <div class="create-trip-button">
+                <a href="/trips/new">+</a>
+            </div>
+        </div>
+        
         {{#each trips}}
             <div class="user-card">
                 <a href='trips/{{this._id}}'>
@@ -10,7 +16,5 @@
             </div>
         {{/each}}
     </div>
-    <div class="create-trip-button">
-        <a href="/trips/new">+ Create trip</a>
-    </div>
+    
 </div>
