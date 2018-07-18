@@ -137,6 +137,7 @@ footer {
   justify-content: space-around;
   padding: 0px 10px 10px;
   border-top: 1px solid #d1d1d1;
+  margin-top: 15px;
 }
 
 footer ul{
@@ -232,7 +233,7 @@ footer .legal-text {
 .user-card a {
   text-decoration: none;
   font-size: 20px;
-  background: rgb(255, 251, 248);
+  background: rgb(255, 250, 240);
   box-shadow: 0 1px 1px rgba(0,0,0,0.15);
   display: block;
   padding: 10px;
@@ -241,17 +242,32 @@ footer .legal-text {
 }
 
 .create-trip-button{
-  background: #6dc2ff;
-  border: 1px solid #6dc2ff;
+  background: #ffa26d;
+  border: 1px solid #ffa26d;
+  border-radius: 8px;
+  padding: 5px;
+  width: 40%;
+  text-align: center;
+}
+
+.the-trip-button{
+  background: #ffa26d;
+  border: 1px solid #ffa26d;
   border-radius: 30px;
   padding: 5px;
   width: 15%;
   text-align: center;
 }
 
-.create-trip-button a{ 
+.the-trip-button a{
   color: white;
   font-size: 30px;
+  text-decoration: none;
+}
+
+.create-trip-button a{ 
+  color: white;
+  font-size: 15px;
   text-decoration: none;
 }
 
@@ -260,8 +276,8 @@ footer .legal-text {
 /* ---- new trip ---- */
 
 .create-back-button{
-  background: #4b8aff;
-  border: 1px solid #4b8aff;
+  background: #6dc2ff;
+  border: 1px solid #6dc2ff;
   border-radius: 8px;
   padding: 1px;
   margin: 10px;
@@ -270,7 +286,7 @@ footer .legal-text {
 }
 
 .create-back-button a{ 
-  color: rgb(255, 255, 255);
+  color: white;
   font-size: 10px;
   text-decoration: none;
 }
