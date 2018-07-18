@@ -6,8 +6,11 @@ const Trip = require('../models/trip');
 
 router.get('/', (req, res, next) => {
   Trip.find({ participants: req.session.currentUser._id })
-    .then((trip) => {
-      res.render('profile', trip);
+    .then((result) => {
+      const data = {
+        trips: result
+      };
+      res.render('profile', data);
     });
 });
 

@@ -2,7 +2,7 @@
     <h1 class="welcome-user">Welcome {{currentUser.username}}</h1>
     <div class="user-trips">
         <h2 >Your trips:</h2>
-        {{#each this}}
+        {{#each trips}}
             <div class="user-card">
                 <a href='trips/{{this._id}}'>
                 <span>{{this.title}}</span>
