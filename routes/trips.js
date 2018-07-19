@@ -3,6 +3,7 @@
 const express = require('express');
 const moment = require('moment');
 const mongoose = require('mongoose');
+const nodemailer = require('nodemailer');
 const router = express.Router();
 
 const Trip = require('../models/trip');
@@ -40,7 +41,6 @@ router.get('/:id', (req, res, next) => {
     return res.render('auth/signup');
   }
   const tripId = req.params.id;
-  console.log(req.params);
 
   Trip.findById(tripId)
     .then((result) => {
@@ -56,6 +56,41 @@ router.get('/:id', (req, res, next) => {
     .catch(error => {
       next(error);
     });
+});
+
+router.get('/:id/invite', (req, res, next) => {
+  if (!req.session.currentUser) {
+    return res.render('auth/signup');
+  }
+  const tripId = req.params.id;
+  res.render('trip-invite', {tripId});
+});
+
+router.post('/:id/invite', (req, res, next) => {
+  if (!req.session.currentUser) {
+    return res.render('auth/signup');
+  }
+  const tripId = req.params.id;
+  const email = req.body.email;
+  // mandar mail a esa direccion de email y dentro del texto del mail poner el tripId que es el codigo que necesitan para agregarse al trip.
+  // poner los pasos a seguir 1. crear usuario, 2. poner codigo en llalal.
+  let transporter = nodemailer.createTransport({
+    service: 'Gmail',
+    auth: {
+      user: 'viajejg@gmail.com',
+      pass: 'gabrieljulio'
+    }
+  });
+  transporter.sendMail({
+    from: '"My Awesome Project Viaje 👻" <viajejg@gmail.com>',
+    to: email,
+    subject: 'Invitation to join trip and our awesome web Viaje',
+    text: `Code to join trip: ${tripId}`,
+    html: `<b>Code to join trip: ${tripId}</b>`
+  });
+
+  // ***************** */
+  res.redirect('/profile');
 });
 
 router.get('/:id/flight', (req, res, next) => {
@@ -105,13 +140,16 @@ router.get('/:id/flightDetail', (req, res, next) => {
   const tripId = req.params.id;
 
   Trip.findById(tripId).lean().populate('flights.passengers')
-    .then((trip) => {
-      const flights = trip.flights;
-      flights.forEach(function (flight) {
-        flight.departureTime = moment(flights.departureTime).format('LT');
-        flight.arrivalTime = moment(flights.arrivalTime).format('LT');
+    .then((result) => {
+      const data = {
+        flights: result.flights,
+        tripId: result._id
+      };
+      data.flights.forEach((flight) => {
+        flight.departureTime = moment(flight.departureTime).format('LT');
+        flight.arrivalTime = moment(flight.arrivalTime).format('LT');
       });
-      res.render('flight-detail', {flights});
+      res.render('flight-detail', data);
     })
     .catch(error => {
       next(error);
@@ -121,7 +159,7 @@ router.get('/:id/flightDetail', (req, res, next) => {
 router.post('/join', (req, res, next) => {
   const tripId = req.body.codetrip;
   if (!mongoose.Types.ObjectId.isValid(tripId)) {
-    req.flash('invalid-trip', 'Code don\'t exist');
+    req.flash('invalid-trip', 'Code does not exist');
     return res.redirect('/profile');
   }
 
