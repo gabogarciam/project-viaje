@@ -4,10 +4,15 @@
 <div class="contain">
     <div>
         <h2>{{this.title}}</h2>
-        <p>{{this.description}}</p>
-        <p>{{this.startDate}}</p>
+        <span>{{this.startDate}}</span>
         <p>{{this.endDate}}</p>
+        <h4>Description</h4>
+        <p>{{this.description}}</p>
     </div>
+    <div class="create-trip-button">
+         <a href="/trips/{{this._id}}/flightDetail">Reservations</a>
+    </div>
+    <br>
     <div class="create-trip-button">
         <a href="/trips/{{this._id}}/flight">Create flight</a>
     </div>

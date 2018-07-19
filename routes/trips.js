@@ -92,4 +92,17 @@ router.post('/:id/flight', (req, res, next) => {
     });
 });
 
+router.get('/:id/flightDetail', (req, res, next) => {
+  const tripId = req.params.id;
+
+  Trip.findById(tripId)
+    .then((trip) => {
+      const flights = trip.flights;
+      res.render('flight-detail', {flights: flights});
+    })
+    .catch(error => {
+      next(error);
+    });
+});
+
 module.exports = router;

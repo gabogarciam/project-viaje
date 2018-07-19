@@ -1,14 +1,16 @@
 <div class="create-back-button">
-    <a href="/trips/{{this._id}}">BACK</a>
+    <a href="/profile"><i class="fas fa-arrow-left"></i></a>
 </div>
 <div class="contain">
-    <h1>flight detail</h1>
-    <div>
-        <p>{{this.flightNumber}}</p>
-        <p>{{this.airline}}</p>
-        <p>{{this.departingAirport}}</p>
-        <p>{{this.arrivingAirport}}</p>
-        <p>{{this.departureTime}}</p>
-        <p>{{this.arrivalTime}}</p>
-    </div>
+    <h1>Flights detail</h1>
+    {{#each flights}}
+        <div>
+            <p>{{this.flightNumber}}</p>
+            <p>{{this.airline}}</p>
+            <p>{{this.departingAirport}}</p>
+            <p>{{this.arrivingAirport}}</p>
+            <p>{{this.departureTime}}</p>
+            <p>{{this.arrivalTime}}</p>
+        </div>
+    {{/each}}
 </div>
