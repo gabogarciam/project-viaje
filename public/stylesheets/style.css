@@ -280,15 +280,15 @@ footer .legal-text {
   background: #6dc2ff;
   border: 1px solid #6dc2ff;
   border-radius: 8px;
-  padding: 1px;
+  padding: 4px;
   margin: 10px;
-  width: 20%;
+  width: 13%;
   text-align: center;
 }
 
 .create-back-button a{ 
   color: white;
-  font-size: 10px;
+  font-size: 15px;
   text-decoration: none;
 }
 
