@@ -3,16 +3,15 @@
 </div>
 <div class="contain">
     <div class="trip-card">
-        <h2>{{title}}</h2>
-        <p>{{startDate}}</p>
-        <p>{{endDate}}</p>
-        <p>Description:{{description}}</p>
+        <h2>{{result.title}}</h2>
+        <p>{{newStartDate}} - {{newEndDate}}</p>
+        <p>Description: {{result.description}}</p>
     </div>
     <div class="create-trip-button">
-         <a href="/trips/{{_id}}/flightDetail">Reservations</a>
+         <a href="/trips/{{result._id}}/flightDetail">Reservations</a>
     </div>
     <br>
     <div class="create-trip-button">
-        <a href="/trips/{{_id}}/flight">Create flight</a>
+        <a href="/trips/{{result._id}}/flight">Create flight</a>
     </div>
 </div>

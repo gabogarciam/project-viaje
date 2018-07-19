@@ -1,6 +1,7 @@
 'use strict';
 
 const express = require('express');
+const moment = require('moment');
 const router = express.Router();
 
 const Trip = require('../models/trip');
@@ -42,7 +43,14 @@ router.get('/:id', (req, res, next) => {
 
   Trip.findById(tripId)
     .then((result) => {
-      res.render('trip-detail', result);
+      let newStartDate = moment(result.startDate).format('l');
+      let newEndDate = moment(result.endDate).format('l');
+      const data = {
+        result,
+        newStartDate,
+        newEndDate
+      };
+      res.render('trip-detail', data);
     })
     .catch(error => {
       next(error);
@@ -95,10 +103,13 @@ router.post('/:id/flight', (req, res, next) => {
 router.get('/:id/flightDetail', (req, res, next) => {
   const tripId = req.params.id;
 
-  Trip.findById(tripId).populate('flights.passengers')
+  Trip.findById(tripId).lean().populate('flights.passengers')
     .then((trip) => {
-      console.log(trip);
       const flights = trip.flights;
+      flights.forEach(function (flight) {
+        flight.departureTime = moment(flights.departureTime).format('LT');
+        flight.arrivalTime = moment(flights.arrivalTime).format('LT');
+      });
       res.render('flight-detail', {flights});
     })
     .catch(error => {
