@@ -36,13 +36,13 @@ router.post('/signup', (req, res, next) => {
   // Form validations
   if (!username && !email && !password) {
     req.flash('signup-error', 'Indicate a username, email and a password to sign up');
-    return res.redirect('/');
+    return res.redirect('/#signup');
   } else if (username === '') {
     req.flash('signup-error', 'Indicate a username to sign up');
-    return res.redirect('/');
+    return res.redirect('/#signup');
   } else if (email === '') {
     req.flash('signup-error', 'Indicate a email to sign up');
-    return res.redirect('/');
+    return res.redirect('/#signup');
   } else if (password === '') {
     req.flash('signup-error', 'Indicate a password to sign up');
     return res.redirect('/');
