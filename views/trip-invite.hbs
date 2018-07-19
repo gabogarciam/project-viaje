@@ -1,4 +1,7 @@
-<form action="/trips/{{tripId}}/invite" method="POST">
-    <input type="email" name="email" placeholder="your friend email">
+<div class="create-back-button">
+    <a href="./"><i class="fas fa-arrow-left"></i></a>
+</div>
+<form class="form contain" action="/trips/{{tripId}}/invite" method="POST">
+    <input type="email" name="email" placeholder="example@email.com">
     <button type="submit">Invite</button>
 </form>
