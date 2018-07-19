@@ -45,14 +45,14 @@ router.post('/signup', (req, res, next) => {
     return res.redirect('/#signup');
   } else if (password === '') {
     req.flash('signup-error', 'Indicate a password to sign up');
-    return res.redirect('/');
+    return res.redirect('/#signup');
   }
 
   User.findOne({ 'email': email })
     .then(user => {
       if (user) {
         req.flash('signup-error', 'This email already has an account');
-        return res.redirect('/');
+        return res.redirect('/#signup');
       } else {
         newUser.save()
           .then(user => {
