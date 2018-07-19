@@ -310,3 +310,25 @@ footer .legal-text {
 .flight-card p{
   margin: 1px;
 }
+
+.trip-card {
+  text-decoration: none;
+  font-size: 15px;
+  background: rgb(250, 240, 255);
+  box-shadow: 0 1px 1px rgba(0,0,0,0.15);
+  display: block;
+  padding: 10px;
+  margin: 10px;
+  color: #383838;
+}
+
+.trip-card p{
+  margin: 0;
+}
+.trip-card h2{
+  margin: 0;
+}
+
+.underline{
+  text-decoration: underline;
+}

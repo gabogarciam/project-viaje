@@ -2,13 +2,13 @@
     <a href="./"><i class="fas fa-arrow-left"></i></a>
 </div>
 <div class="contain">
-    <h1>Flight details</h1>
+    <h1 class="underline">Flight details:</h1>
     {{#each flights}}
-        <div>
-            <p>{{flightNumber}}</p>
-            <p>{{airline}}</p>
-            <p>{{departingAirport}}</p>
-            <p>{{arrivingAirport}}</p>
+        <div class="trip-card">
+            <p>{{airline}}: #{{flightNumber}}</p>
+            <p></p>
+            <p>{{departingAirport}} - {{arrivingAirport}}</p>
+            <p></p>
             <p>{{departureTime}}</p>
             <p>{{arrivalTime}}</p>
             <span>Passengers: </span>
