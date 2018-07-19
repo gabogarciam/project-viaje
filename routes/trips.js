@@ -2,6 +2,7 @@
 
 const express = require('express');
 const moment = require('moment');
+const mongoose = require('mongoose');
 const router = express.Router();
 
 const Trip = require('../models/trip');
@@ -119,13 +120,19 @@ router.get('/:id/flightDetail', (req, res, next) => {
 
 router.post('/join', (req, res, next) => {
   const tripId = req.body.codetrip;
+  if (!mongoose.Types.ObjectId.isValid(tripId)) {
+    req.flash('invalid-trip', 'Code don\'t exist');
+    return res.redirect('/profile');
+  }
 
   Trip.findByIdAndUpdate(tripId, {
     $push: { participants: req.session.currentUser._id }
   })
-    .then(() => {
+    .then((result) => {
+      if (!result) {
+        req.flash('invalid-trip', 'Unable to find your trip');
+      }
       return res.redirect('/profile');
-    // recuerda hacer save()
     })
     .catch(error => {
       next(error);

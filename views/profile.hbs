@@ -20,5 +20,9 @@
         <input type="text" name="codetrip" placeholder="Trip Code">
         <button>Join to trip</button>
     </form>
-    
+    {{#if messages.length}}
+        <ul class="validation">
+        {{#each messages}}<li>{{this}}</li>{{/each}}
+        </ul>
+    {{/if}}
 </div>
