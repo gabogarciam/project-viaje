@@ -2,15 +2,15 @@
     <a href="/profile"><i class="fas fa-arrow-left"></i></a>
 </div>
 <div class="contain">
-    <h1>Flights detail</h1>
+    <h1>Flight details</h1>
     {{#each flights}}
-        <div>
-            <p>{{this.flightNumber}}</p>
+        <div class="flight-card">
             <p>{{this.airline}}</p>
-            <p>{{this.departingAirport}}</p>
-            <p>{{this.arrivingAirport}}</p>
-            <p>{{this.departureTime}}</p>
-            <p>{{this.arrivalTime}}</p>
+            <p>#{{this.flightNumber}}</p>
+            <p>From:{{this.departingAirport}}</p>
+            <p>To:{{this.arrivingAirport}}</p>
+            <p>Depart:{{this.departureTime}}</p>
+            <p>Arrive:{{this.arrivalTime}}</p>
         </div>
     {{/each}}
 </div>
