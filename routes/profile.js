@@ -8,7 +8,8 @@ router.get('/', (req, res, next) => {
   Trip.find({ participants: req.session.currentUser._id })
     .then((result) => {
       const data = {
-        trips: result
+        trips: result,
+        messages: req.flash('invalid-trip')
       };
       res.render('profile', data);
     });
