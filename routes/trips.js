@@ -85,8 +85,8 @@ router.post('/:id/invite', (req, res, next) => {
     from: '"My Awesome Project Viaje 👻" <viajejg@gmail.com>',
     to: email,
     subject: 'Invitation to join trip and our awesome web Viaje',
-    text: `Code to join trip: ${tripId}`,
-    html: `<b>Code to join trip: ${tripId}</b>`
+    text: `Go to viaje-jg.herokuapp.com and login/signup. Then, go to My Trips where at the bottom of the page you will enter the following code: ${tripId}`,
+    html: `<b>Go to viaje-jg.herokuapp.com and login/signup. Then, go to My Trips where at the bottom of the page you will enter the following code: ${tripId}</b>`
   });
 
   // ***************** */
