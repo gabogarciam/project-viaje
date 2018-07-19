@@ -5,12 +5,16 @@
     <h1>Flights detail</h1>
     {{#each flights}}
         <div>
-            <p>{{this.flightNumber}}</p>
-            <p>{{this.airline}}</p>
-            <p>{{this.departingAirport}}</p>
-            <p>{{this.arrivingAirport}}</p>
-            <p>{{this.departureTime}}</p>
-            <p>{{this.arrivalTime}}</p>
+            <p>{{flightNumber}}</p>
+            <p>{{airline}}</p>
+            <p>{{departingAirport}}</p>
+            <p>{{arrivingAirport}}</p>
+            <p>{{departureTime}}</p>
+            <p>{{arrivalTime}}</p>
+            <span>Passengers: </span>
+            {{#each passengers}}
+                <p>{{username}}</p>
+            {{/each}}
         </div>
     {{/each}}
 </div>

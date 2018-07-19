@@ -95,10 +95,26 @@ router.post('/:id/flight', (req, res, next) => {
 router.get('/:id/flightDetail', (req, res, next) => {
   const tripId = req.params.id;
 
-  Trip.findById(tripId)
+  Trip.findById(tripId).populate('flights.passengers')
     .then((trip) => {
+      console.log(trip);
       const flights = trip.flights;
-      res.render('flight-detail', {flights: flights});
+      res.render('flight-detail', {flights});
+    })
+    .catch(error => {
+      next(error);
+    });
+});
+
+router.post('/join', (req, res, next) => {
+  const tripId = req.body.codetrip;
+
+  Trip.findByIdAndUpdate(tripId, {
+    $push: { participants: req.session.currentUser._id }
+  })
+    .then(() => {
+      return res.redirect('/profile');
+    // recuerda hacer save()
     })
     .catch(error => {
       next(error);
