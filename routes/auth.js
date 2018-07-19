@@ -35,16 +35,16 @@ router.post('/signup', (req, res, next) => {
 
   // Form validations
   if (!username && !email && !password) {
-    req.flash('signup-error', 'Indicate a username, email and a password to sign up');
+    req.flash('signup-error', '!! Indicate a username, email and a password to sign up !!');
     return res.redirect('/#signup');
   } else if (username === '') {
-    req.flash('signup-error', 'Indicate a username to sign up');
+    req.flash('signup-error', '!! Indicate a username to sign up !!');
     return res.redirect('/#signup');
   } else if (email === '') {
-    req.flash('signup-error', 'Indicate a email to sign up');
+    req.flash('signup-error', '!! Indicate a email to sign up !!');
     return res.redirect('/#signup');
   } else if (password === '') {
-    req.flash('signup-error', 'Indicate a password to sign up');
+    req.flash('signup-error', '!! Indicate a password to sign up !!');
     return res.redirect('/#signup');
   }
 
@@ -89,12 +89,12 @@ router.post('/login', (req, res, next) => {
   const password = req.body.password;
 
   if (!email) {
-    req.flash('login-error', 'Indicate a email to sign up');
+    req.flash('login-error', '!! Indicate a email to sign up !!');
     return res.redirect('login');
   }
 
   if (!password) {
-    req.flash('login-error', 'Indicate a password to sign up');
+    req.flash('login-error', '!! Indicate a password to sign up !!');
     return res.redirect('login');
   }
 

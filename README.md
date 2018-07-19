@@ -57,7 +57,14 @@ POST /trips/:id/edit - We send the trip id directly in the post
 GET /trips/new
 POST /trips - We send the trip id directly in the post
 ```
-## ADDING TO FLIGHT
+
+## JOIN TRIP
+```
+GET /trips/:id
+POST /trips/:id
+```
+
+## JOIN FLIGHT
 ```
 GET /trips/:id
 POST /trips/:id/flight/:number/edit
