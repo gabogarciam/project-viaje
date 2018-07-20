@@ -1,11 +1,14 @@
-<div class="create-back-button">
-    <a href="./"><i class="fas fa-arrow-left"></i></a>
-</div>
-<div class="create-trip-button move-right">
-    <a href="/trips/{{tripId}}/flight">Create flight</a>
+<div class="seperate-buttons">
+    <div class="create-back-button">
+        <a href="./"><i class="fas fa-arrow-left"></i></a>
+    </div>
+    <div class="create-trip-button">
+        <a href="/trips/{{tripId}}/flight">Create flight</a>
+    </div>
 </div>
 <div class="contain">
     <h1 class="underline">Flight details:</h1>
+    <div class="flex-cards">
     {{#each flights}}
         <div class="trip-card">
             <div class="add-pass">
@@ -26,4 +29,5 @@
             </p>
         </div>
     {{/each}}
+    </div>
 </div>
