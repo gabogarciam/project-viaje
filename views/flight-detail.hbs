@@ -8,22 +8,22 @@
     <h1 class="underline">Flight details:</h1>
     {{#each flights}}
         <div class="trip-card">
-            <p>{{airline}}: #{{flightNumber}}</p>
-            <p></p>
-            <p>{{departingAirport}} - {{arrivingAirport}}</p>
-            <p></p>
-            <p>{{departureTime}} - {{arrivalTime}}</p>
             <div class="add-pass">
-                <span>Passengers: </span>
+                <p>{{airline}}: #{{flightNumber}}</p>
                 <form action=".{{tripId}}/joinflight" method="post">
                     <input type="hidden" name="flightNumber" value="{{flightNumber}}">
                     <button type="submit"><i class="fas fa-user-plus"></i></button>
                 </form>
-                
             </div>
+            <p>{{departingAirport}} - {{arrivingAirport}}</p>
+            <p></p>
+            <p>{{departureTime}} - {{arrivalTime}}</p>
+            <p>Passengers: </p>
+            <p>
             {{#each passengers}}
-                <p>{{username}}</p>
+                {{username}} - 
             {{/each}}
+            </p>
         </div>
     {{/each}}
 </div>
