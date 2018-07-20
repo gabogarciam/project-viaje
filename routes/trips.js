@@ -158,6 +158,11 @@ router.get('/:id/flightDetail', (req, res, next) => {
 
 router.post('/join', (req, res, next) => {
   const tripId = req.body.codetrip;
+
+  if (tripId === '') {
+    req.flash('invalid-trip', 'Enter code');
+    return res.redirect('/profile');
+  }
   if (!mongoose.Types.ObjectId.isValid(tripId)) {
     req.flash('invalid-trip', 'Code does not exist');
     return res.redirect('/profile');
@@ -175,6 +180,11 @@ router.post('/join', (req, res, next) => {
     .catch(error => {
       next(error);
     });
+});
+
+router.post('/joinflight', (req, res, next) => {
+  const tripId = req.body.codetrip;
+  console.log(tripId);
 });
 
 module.exports = router;

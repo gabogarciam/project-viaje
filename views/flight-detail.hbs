@@ -13,6 +13,11 @@
             <p>{{departingAirport}} - {{arrivingAirport}}</p>
             <p></p>
             <p>{{departureTime}} - {{arrivalTime}}</p>
+            <form action="/joinflight" method="post">
+                <button>
+                    <i class="fas fa-user-plus"></i>
+                </button>
+            </form>
             <span>Passengers: </span>
             {{#each passengers}}
                 <p>{{username}}</p>
