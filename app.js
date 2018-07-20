@@ -67,7 +67,6 @@ app.use((req, res, next) => {
   res.render('errors/not-found');
 });
 
-// NOTE: requires a views/error.ejs template
 app.use((err, req, res, next) => {
   // always log the error
   console.error('ERROR', req.method, req.path, err);

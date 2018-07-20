@@ -13,10 +13,9 @@
             <p>{{departingAirport}} - {{arrivingAirport}}</p>
             <p></p>
             <p>{{departureTime}} - {{arrivalTime}}</p>
-            <form action="/joinflight" method="post">
-                <button>
-                    <i class="fas fa-user-plus"></i>
-                </button>
+            <form action=".{{tripId}}/joinflight" method="post">
+                <input type="hidden" name="flightNumber" value="{{flightNumber}}">
+                <button type="submit"><i class="fas fa-user-plus"></i></button>
             </form>
             <span>Passengers: </span>
             {{#each passengers}}

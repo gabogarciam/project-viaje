@@ -182,9 +182,25 @@ router.post('/join', (req, res, next) => {
     });
 });
 
-router.post('/joinflight', (req, res, next) => {
-  const tripId = req.body.codetrip;
-  console.log(tripId);
+router.post('/:id/joinflight', (req, res, next) => {
+  const tripId = req.params.id;
+  let flightNumber = req.body.flightNumber;
+  const filter = {
+    _id: tripId,
+    'flights.flightNumber': flightNumber
+  };
+  const update = {
+    $push: {
+      'flights.$.passengers': req.session.currentUser._id
+    }
+  };
+  Trip.findOneAndUpdate(filter, update)
+    .then(() => {
+      return res.redirect(`/trips/${tripId}/flightDetail`);
+    })
+    .catch(error => {
+      next(error);
+    });
 });
 
 module.exports = router;
