@@ -422,3 +422,7 @@ footer .legal-text {
   max-width: 250px;
   margin: 0 auto;
 }
+
+.inline{
+  display: inline;
+}
