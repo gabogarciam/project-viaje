@@ -13,11 +13,14 @@
             <p>{{departingAirport}} - {{arrivingAirport}}</p>
             <p></p>
             <p>{{departureTime}} - {{arrivalTime}}</p>
-            <form action=".{{tripId}}/joinflight" method="post">
-                <input type="hidden" name="flightNumber" value="{{flightNumber}}">
-                <button type="submit"><i class="fas fa-user-plus"></i></button>
-            </form>
-            <span>Passengers: </span>
+            <div class="add-pass">
+                <span>Passengers: </span>
+                <form action=".{{tripId}}/joinflight" method="post">
+                    <input type="hidden" name="flightNumber" value="{{flightNumber}}">
+                    <button type="submit"><i class="fas fa-user-plus"></i></button>
+                </form>
+                
+            </div>
             {{#each passengers}}
                 <p>{{username}}</p>
             {{/each}}

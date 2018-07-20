@@ -346,3 +346,8 @@ footer .legal-text {
 .move-right{
   margin-left: 10px;
 }
+
+.add-pass{
+  display: flex;
+  justify-content: space-between;
+}
