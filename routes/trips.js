@@ -77,12 +77,12 @@ router.post('/:id/invite', (req, res, next) => {
   let transporter = nodemailer.createTransport({
     service: 'Gmail',
     auth: {
-      user: 'viajejg@gmail.com',
+      user: 'viajeheroku@gmail.com',
       pass: 'gabrieljulio'
     }
   });
   transporter.sendMail({
-    from: '"My Awesome Project Viaje 👻" <viajejg@gmail.com>',
+    from: '"My Awesome Project Viaje 👻" <viajeheroku@gmail.com>',
     to: email,
     subject: 'Invitation to join trip and our awesome web Viaje',
     text: `Go to viaje-jg.herokuapp.com and login/signup. Then, go to My Trips where at the bottom of the page you will enter the following code: ${tripId}`,
